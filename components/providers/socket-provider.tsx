@@ -45,11 +45,14 @@ export const SocketProvider = ({
     });
 
     setSocket(socketInstance);
-
+    // console.log(process.env.NEXT_PUBLIC_SITE_URL!)
+    // console.log(socketInstance)
     return () => {
       socketInstance.disconnect();
     }
   }, []);
+
+  
 
   return (
     <SocketContext.Provider value={{ socket, isConnected }}>
